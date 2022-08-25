@@ -1,18 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { PageIndex } from "./pages/index/PageIndex"
+import { useDispatch } from 'react-redux'
+import { chats } from "./store/actions/chats"
+import StubPage from './pages/stubPage/StubPage'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+  const dispatch = useDispatch()
 
-      </header>
+  useEffect(() => dispatch(chats()), [])
+
+  return (
+    <div>
+      { document.documentElement.scrollWidth > 700
+        ? <PageIndex />
+        : <StubPage />
+      }
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,5 @@
+export const
+  SET_LOADING = 'SET_LOADING',
+  GET_ERROR = 'GET_ERROR',
+  GET_CHATS = 'GET_CHATS',
+  GET_CHAT = 'GET_CHAT'

@@ -1,0 +1,22 @@
+//Не нашла шрифты в json
+@import url('https://fonts.googleapis.com/css2?family=Imprima&family=Lato:wght@400;700&display=swap');
+
+.SystemMessage{
+  text-align: center;
+  width: 86px;
+  white-space: nowrap;
+  padding: 8px 12px;
+  background: rgba(64, 126, 201, 0.08);
+  border-radius: 4px;
+  margin: 12px auto;
+
+  & p{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #201F1E;
+  }
+}
