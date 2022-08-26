@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div>
-      { document.documentElement.scrollWidth > 700
+      {document.documentElement.scrollWidth > 700
         ? <PageIndex />
         : <StubPage />
       }
