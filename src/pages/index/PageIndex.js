@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header'
 import classes from '../index/pageIndex.module.scss'
 import { chat } from '../../store/actions/chats'
 import ChatPage from '../chatPage/ChatPage'
+import Loader from '../../components/Loader/Loader'
 
 
 export const PageIndex = () => {
@@ -12,6 +13,7 @@ export const PageIndex = () => {
   const dispatch = useDispatch()
   const [selected, setSelected] = useState(null)
   const [chatName, setChatName] = useState('Select Chat...')
+  const loading = useSelector(state => state.chats.loading)
 
   const onChatClick = (id) => {
     dispatch(chat(id))
@@ -32,7 +34,10 @@ export const PageIndex = () => {
         </div>
         <div className={classes.chat}>
           <Header title={chatName} icon={true} />
-          {!!selected && <ChatPage />}
+          {loading
+            ? <Loader />
+            : !!selected && <ChatPage />
+          }
         </div>
       </div>
     )
